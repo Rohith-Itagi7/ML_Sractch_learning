@@ -1,22 +1,7 @@
-# import numpy as np
-# x=np.array([1,2,3,4])
-# y=np.array([4,5,6,7])
-
-# w=0
-# lr=0.01
-# epochs=50
-
-# for i in range(epochs):
-
-#     y_pred=w*x
-#     error=y_pred-y
-#     loss=np.mean(error**2)
-#     gradient=2*np.mean(error*x)
-
 import numpy as np
 
 # Data
-X = np.array([1, 2, 3])
+X = np.array([1, 2, 3 ])
 y = np.array([40, 50, 60])
 
 # Initialize weight
