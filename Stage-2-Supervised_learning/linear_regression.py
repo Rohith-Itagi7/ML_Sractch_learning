@@ -37,7 +37,7 @@ y = np.array([3, -0.5, 2, 7])
 y_pred = np.array([2.5, 0.0, 2, 8])
 
 # MAE
-mae = np.mean(error)
+mae = np.mean(np.abs(error))
 
 # MSE
 mse = np.mean(error**2)
@@ -47,8 +47,8 @@ rmse = np.sqrt(mse)
 
 # R²
 ss_total = np.sum((y - np.mean(y))**2)
-ss_res =np.sum(y-y_pred**2)
-r2 = 1-ss_total/ss_res
+ss_res =np.sum((y - y_pred)**2)
+r2 = 1 - (ss_res / ss_total)
 
 print("MAE:", mae)
 print("RMSE:", rmse)
