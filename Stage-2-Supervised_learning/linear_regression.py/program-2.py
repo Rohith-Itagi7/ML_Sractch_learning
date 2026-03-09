@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
+<<<<<<< HEAD
 import matplotlib.pyplot as plt
+=======
+>>>>>>> 504954996aab05d3dc2da298b094ff5de8d274f5
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
@@ -104,6 +107,7 @@ new_house_scaled = scaler.transform(new_house)
 prediction = model.predict(new_house_scaled)
 
 print("\nPredicted Price:", prediction)
+<<<<<<< HEAD
 
 plt.figure(figsize=(6,4))
 
@@ -115,3 +119,5 @@ plt.ylabel("Price")
 plt.title("House Size vs Price")
 
 plt.show()
+=======
+>>>>>>> 504954996aab05d3dc2da298b094ff5de8d274f5
