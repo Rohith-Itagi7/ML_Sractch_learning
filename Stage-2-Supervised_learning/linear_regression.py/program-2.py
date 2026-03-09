@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
@@ -104,3 +104,14 @@ new_house_scaled = scaler.transform(new_house)
 prediction = model.predict(new_house_scaled)
 
 print("\nPredicted Price:", prediction)
+
+plt.figure(figsize=(6,4))
+
+plt.scatter(df["size_sqt"], df["Price"], color="green")
+
+plt.xlabel("Size (sqft)")
+plt.ylabel("Price")
+
+plt.title("House Size vs Price")
+
+plt.show()
