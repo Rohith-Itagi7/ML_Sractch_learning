@@ -10,7 +10,7 @@ y = X**2 + np.random.randn(20)*10   # quadratic relation + noise
 
 X = X.reshape(-1,1)
 
-# Create smooth X for plotting curves
+
 X_plot = np.linspace(0,10,100).reshape(-1,1)
 
 # ---------- Underfitting (Linear model) ----------
@@ -27,7 +27,6 @@ model2.fit(X_poly2,y)
 
 y_poly2 = model2.predict(poly2.transform(X_plot))
 
-# ---------- Overfitting (Polynomial degree 10) ----------
 poly10 = PolynomialFeatures(degree=10)
 X_poly10 = poly10.fit_transform(X)
 
@@ -36,7 +35,6 @@ model10.fit(X_poly10,y)
 
 y_poly10 = model10.predict(poly10.transform(X_plot))
 
-# ---------- Plot ----------
 plt.figure(figsize=(15,4))
 
 # Underfitting
