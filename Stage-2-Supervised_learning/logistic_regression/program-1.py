@@ -1,3 +1,8 @@
+Logistic regression predicts probability
+Sigmoid converts linear output → probability
+Threshold converts probability → class
+Decision boundary separates classes
+
 import numpy as np
 import matplotlib.pyplot as plt
 
