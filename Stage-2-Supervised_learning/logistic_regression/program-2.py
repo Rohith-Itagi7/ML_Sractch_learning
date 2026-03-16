@@ -16,3 +16,11 @@ Gradient Descent
 Update weights
    ↓
 Repeat
+
+Linear equation
+↓
+Sigmoid
+↓
+Log loss
+↓
+Gradient descent
