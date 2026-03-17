@@ -24,3 +24,15 @@ Sigmoid
 Log loss
 ↓
 Gradient descent
+
+Attendance
+   |
+   |    Pass
+   |      *
+   |    *
+   |  *
+---|----------------
+   | *   Fail
+   | *
+   | *
+      Study Hours
