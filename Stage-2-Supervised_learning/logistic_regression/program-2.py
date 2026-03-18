@@ -36,3 +36,10 @@ Attendance
    | *
    | *
       Study Hours
+import numpy as np
+
+y = 1
+p = 0.8
+
+loss = -(y*np.log(p) + (1-y)*np.log(1-p))
+print(loss)
