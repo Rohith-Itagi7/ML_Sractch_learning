@@ -1,0 +1,50 @@
+# Introduction to NLP
+
+Natural Language Processing (NLP) is a field of AI
+that focuses on enabling computers to understand,
+process, and generate human language.
+
+---
+
+## 1. What is NLP?
+
+NLP stands for **Natural Language Processing**.
+
+It combines:
+
+- Computer Science
+- Artificial Intelligence
+- Linguistics
+- Machine Learning
+
+### Examples
+
+- Chatbots
+- Machine Translation
+- Sentiment Analysis
+- Text Classification
+- Search Engines
+- Question Answering
+
+---
+
+## 2. NLP Pipeline
+
+A typical NLP pipeline looks like:
+
+```text
+Raw Text
+   ↓
+Normalization
+   ↓
+Tokenization
+   ↓
+Stopword Removal
+   ↓
+Stemming / Lemmatization
+   ↓
+Feature Extraction
+   ↓
+Machine Learning / Deep Learning
+   ↓
+Prediction
