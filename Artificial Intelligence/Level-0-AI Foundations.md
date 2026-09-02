@@ -1,6 +1,6 @@
 # Artificial Intelligence — Foundations & Practical Understanding
 
-Practical notes focused on understanding the fundamental ideas behind Artificial Intelligence, including agents, rational behavior, search, planning, probability, belief states, utility, and decision-making.
+Practical AI learning notes focused on understanding how intelligent agents perceive, reason, handle uncertainty, make decisions, and act.
 
 ---
 
@@ -8,7 +8,7 @@ Practical notes focused on understanding the fundamental ideas behind Artificial
 
 Artificial Intelligence (AI) is the broad field of building systems that can **perceive, reason, make decisions, and act intelligently** to achieve a goal.
 
-AI is not one algorithm.
+AI is **not one algorithm**.
 
 AI can use different approaches such as:
 
@@ -20,8 +20,6 @@ AI can use different approaches such as:
 - Machine Learning
 - Deep Learning
 - Reinforcement Learning
-
----
 
 ### AI vs ML
 
@@ -52,7 +50,7 @@ AI
 
 ---
 
-# 2. What is an Agent?
+## 2. What is an Agent?
 
 An **agent** is a system that:
 
@@ -74,24 +72,24 @@ An **agent** is a system that:
 ```text
 Environment
      ↓
- Perception
+  Perception
      ↓
-   Agent
+    Agent
      ↓
  Decision
      ↓
-  Action
+   Action
      ↓
 Environment changes
      ↓
-   Repeat
+    Repeat
 ```
 
 ---
 
-# 3. Intelligence
+## 3. Intelligence
 
-In practical AI, intelligence can be understood as the ability of a system to choose **useful actions to achieve its goals**.
+In practical AI, intelligence can be understood as the ability of a system to **choose useful actions to achieve its goals**.
 
 Conceptually:
 
@@ -106,32 +104,28 @@ AI tries to build systems capable of making such decisions.
 
 ---
 
-# 4. Rational Behavior
+## 4. Rational Behavior
 
-A **rational agent** chooses the action expected to produce the best outcome according to its goal, performance measure, and available information.
+A **rational agent** chooses the action expected to produce the best outcome according to its goal/performance measure and available information.
 
-### Example
-
-A robot has two possible paths:
+For example, a robot has two possible paths:
 
 ```text
-Path A → Short but dangerous
-Path B → Slightly longer but safe
+Path A → short but dangerous
+Path B → slightly longer but safe
 ```
 
 A rational agent does not blindly choose the shortest path.
 
 It considers what outcome is best according to its objective.
 
-> Rational does not necessarily mean "perfect." It means choosing the best expected action given the available information and objective.
-
 ---
 
-# 5. State
+## 5. State
 
 A **state** represents the current situation of the environment relevant to the agent.
 
-### Example
+Example:
 
 ```python
 state = {
@@ -141,11 +135,11 @@ state = {
 }
 ```
 
-The state tells the agent what it currently knows or represents about the world.
+The state tells the agent what it currently knows about the world.
 
 ---
 
-# 6. State Space
+## 6. State Space
 
 The **state space** is the collection of possible states that an AI system could encounter.
 
@@ -163,33 +157,31 @@ AI algorithms can search through these possible states to find a solution.
 
 ---
 
-# 7. Search
+## 7. Search
 
-**Search** means exploring possible states and actions to find a path toward a goal.
+Search means exploring possible states/actions to find a path toward a goal.
 
-### Example
+Example:
 
 ```text
-        Start
-          ↓
-          A
-        ↙   ↘
-       B     C
-              ↓
-             Goal
+Start
+  ↓
+ A
+ ↙ ↘
+B   C
+    ↓
+   Goal
 ```
 
 Classical AI uses algorithms such as:
 
-- Breadth-First Search (BFS)
-- Depth-First Search (DFS)
+- BFS
+- DFS
 - Uniform Cost Search
 - Greedy Best-First Search
 - A*
 
----
-
-## A* Search
+### A*
 
 A* evaluates a state using:
 
@@ -199,13 +191,8 @@ f(n) = g(n) + h(n)
 
 Where:
 
-```text
-g(n) = cost already travelled
-
-h(n) = estimated cost to the goal
-
-f(n) = estimated total cost
-```
+- `g(n)` = cost already travelled
+- `h(n)` = estimated cost to the goal
 
 Search is useful for:
 
@@ -217,23 +204,19 @@ Search is useful for:
 
 ---
 
-# 8. Optimal Solution
+## 8. Optimal Solution
 
-An **optimal solution** is the best solution according to a defined objective.
+An optimal solution is the **best solution according to a defined objective**.
 
-### Example
-
-Goal: Reach destination
+For example:
 
 ```text
+Goal: Reach destination
+
 Path A → 20 km
 Path B → 15 km
 Path C → 18 km
-```
 
-If the objective is minimum distance:
-
-```text
 Optimal = Path B
 ```
 
@@ -242,27 +225,24 @@ But "best" depends on the objective.
 If safety is more important than distance:
 
 ```text
-Path A → Safest
-Path B → Shortest
+Path A → safest
+Path B → shortest
 ```
 
 Then the optimal choice may be Path A.
 
-> Optimality depends on the objective or performance measure.
-
 ---
 
-# 9. Planning
+## 9. Planning
 
-**Planning** means determining a sequence of actions that can achieve a goal.
+Planning means determining a **sequence of actions** that can achieve a goal.
 
-### Example
-
-Goal: Get gold
+Example:
 
 ```text
-Plan:
+Goal: Get gold
 
+Plan:
 1. Move forward
 2. Turn right
 3. Move forward
@@ -280,7 +260,7 @@ Planning is used in:
 
 ---
 
-# 10. Uncertainty
+## 10. Uncertainty
 
 Real environments are not completely known.
 
@@ -305,17 +285,17 @@ P(Cavity | Toothache) = 0.8
 
 Meaning:
 
-> Given the available information, the probability/belief of a cavity is 0.8.
+> Given the available information, the belief/probability of a cavity is 0.8.
 
 Probability therefore gives AI a way to represent uncertainty.
 
 ---
 
-# 11. Probability Theory in AI
+## 11. Probability Theory in AI
 
-Probability allows an agent to represent how likely different possibilities are.
+Probability allows an agent to represent **how likely different possibilities are**.
 
-### Example
+Example:
 
 ```text
 Rain = 0.7
@@ -333,11 +313,11 @@ Probability is especially useful when:
 
 ---
 
-# 12. Bayes' Rule
+## 12. Bayes' Rule
 
 Bayes' Rule allows an agent to **update its belief when new evidence arrives**.
 
-### Basic Form
+Basic form:
 
 ```text
 P(A | B) = P(B | A) P(A) / P(B)
@@ -355,35 +335,33 @@ Bayesian update
 New belief
 ```
 
-### Example
+Example:
 
 A medical AI initially has one belief about a disease.
 
 Then it receives:
 
 ```text
-Symptom
-   +
-Test result
-   ↓
-Bayesian update
-   ↓
-Updated belief
+symptom
++
+test result
 ```
 
-Bayesian reasoning can therefore be used for belief updating under uncertainty.
+It can update its belief about the disease.
+
+Bayesian reasoning can therefore be used for **belief updating under uncertainty**.
 
 ---
 
-# 13. Belief State
+## 13. Belief State
 
 When an agent cannot know the exact state of the world, it can maintain a **belief about possible states**.
 
-### Example
-
-Possible pit locations:
+Example:
 
 ```text
+Possible pit locations:
+
 (1,2) → 50%
 (2,1) → 50%
 ```
@@ -400,17 +378,17 @@ A belief state can be thought of as:
 
 > "What does the agent currently believe about the possible states of the world?"
 
-This is important for **partially observable environments**.
+This is important for partially observable environments.
 
 ---
 
-# 14. Utility
+## 14. Utility
 
 Probability tells us **what might happen**.
 
-Utility tells us **how desirable an outcome is**.
+Utility tells us **how desirable the outcome is**.
 
-### Example
+Example:
 
 ```text
 Action A:
@@ -436,15 +414,15 @@ That value is represented using **utility**.
 
 ---
 
-# 15. Decision Theory
+## 15. Decision Theory
 
 Decision Theory combines:
 
 ```text
 Probability
-     +
++
 Utility
-     ↓
+=
 Decision Theory
 ```
 
@@ -456,11 +434,11 @@ This is different from simply predicting something.
 
 ---
 
-# 16. Maximum Expected Utility (MEU)
+## 16. Maximum Expected Utility (MEU)
 
-Maximum Expected Utility gives an agent a way to choose between actions when outcomes are uncertain.
+MEU gives the agent a way to choose between actions when outcomes are uncertain.
 
-### Expected Utility
+Conceptually:
 
 ```text
 Expected Utility
@@ -468,7 +446,7 @@ Expected Utility
 Σ Probability(outcome) × Utility(outcome)
 ```
 
-The agent chooses the action with the **highest expected utility**.
+The agent chooses the action with the highest expected utility.
 
 ### Decision Process
 
@@ -481,7 +459,6 @@ Probability × Utility
    ↓
 Expected Utility
 
-
 Action B
    ↓
 Possible outcomes
@@ -489,11 +466,7 @@ Possible outcomes
 Probability × Utility
    ↓
 Expected Utility
-```
 
-Then:
-
-```text
 Choose the action with higher expected utility
 ```
 
@@ -501,27 +474,27 @@ This is a practical decision-making principle for rational agents.
 
 ---
 
-# 17. Transition Model
+## 17. Transition Model
 
-A **transition model** describes how the environment may change after an action.
+A transition model describes how the environment may change after an action.
 
 Conceptually:
 
 ```text
 Current State
-      +
-    Action
-      ↓
+     +
+   Action
+     ↓
 Possible Next States
 ```
 
-### Example
-
-A robot is at position A.
+For example:
 
 ```text
+Robot at position A
+
 Move Forward
-      ↓
+     ↓
 80% → reaches B
 20% → slips and reaches C
 ```
@@ -531,119 +504,441 @@ The transition model represents this uncertainty.
 This concept becomes especially important in:
 
 - Planning
-- Markov Decision Processes (MDPs)
+- Markov Decision Processes
 - Reinforcement Learning
 - Robotics
 
 ---
 
-# AI Foundations — Core Mental Model
+# 18. Wumpus World — Putting AI Concepts Together
 
-The concepts above can be connected into one overall picture:
+Wumpus World is a small artificial environment used to understand intelligent agents.
+
+The environment contains:
+
+- Wumpus
+- Pits
+- Gold
+- Agent
+
+The agent's goal is:
 
 ```text
-              ENVIRONMENT
-                   ↓
-              PERCEPTION
-                   ↓
-                STATE
-                   ↓
-        ┌────────────────────┐
-        │   What do I know?  │
-        │                    │
-        │ Probability        │
-        │ Bayes              │
-        │ Belief State       │
-        └────────────────────┘
-                   ↓
-        ┌────────────────────┐
-        │ What can I do?     │
-        │                    │
-        │ Search             │
-        │ Planning           │
-        │ Transition Model   │
-        └────────────────────┘
-                   ↓
-        ┌────────────────────┐
-        │ What is best?      │
-        │                    │
-        │ Utility            │
-        │ Decision Theory    │
-        │ MEU                │
-        └────────────────────┘
-                   ↓
-                 ACTION
-                   ↓
-              ENVIRONMENT
-                   ↓
-                 Repeat
+Find gold
++
+Avoid Wumpus
++
+Avoid pits
++
+Escape safely
+```
+
+The important point is:
+
+**The agent cannot see the entire world.**
+
+It receives percepts from the environment.
+
+Possible percepts include:
+
+```text
+Stench
+Breeze
+Glitter
+Bump
+Scream
+```
+
+For example:
+
+```text
+[Stench, Breeze, None, None, None]
+```
+
+This is the agent's input/perception.
+
+The agent does not receive:
+
+```text
+"The Wumpus is at (1,3)"
+```
+
+Instead, it receives clues and must reason about the hidden world.
+
+---
+
+## 19. How Does the Agent Get Input?
+
+The environment generates the world.
+
+For example:
+
+```text
+World:
+
+[Safe] [Safe] [Wumpus]
+[Safe] [Pit ] [Safe]
+[Agent] [Safe] [Gold]
+```
+
+The agent has sensors.
+
+When it enters a location:
+
+```text
+Environment
+     ↓
+Sensor
+     ↓
+Percept
+     ↓
+Agent
+```
+
+For example:
+
+```text
+Agent enters (1,2)
+
+Sensor detects:
+Stench = True
+Breeze = False
+Glitter = False
+```
+
+The agent receives this information.
+
+It then reasons about what could be nearby.
+
+---
+
+## 20. What Does the Agent Do With the Input?
+
+Suppose:
+
+```text
+Agent at (1,2)
+
+Percept:
+Stench = True
+```
+
+The agent knows from the environment's rules that a stench indicates the Wumpus is in an adjacent location.
+
+Therefore:
+
+```text
+Possible Wumpus locations
+        ↓
+(1,1), (1,3), (2,2)
+```
+
+After considering what it already knows, it may eliminate some possibilities.
+
+Eventually it can infer:
+
+```text
+Wumpus → (1,3)
+```
+
+This is **reasoning**.
+
+---
+
+## 21. The Important AI Architecture
+
+All of these concepts fit into an agent loop:
+
+```text
+             ENVIRONMENT
+                  ↓
+              Percepts
+                  ↓
+        ┌─────────────────┐
+        │      AGENT      │
+        │                 │
+        │  State          │
+        │  Belief         │
+        │  Reasoning      │
+        │  Probability    │
+        │  Utility        │
+        │  Decision       │
+        └────────┬────────┘
+                 ↓
+               Action
+                 ↓
+             ENVIRONMENT
+```
+
+So AI is not simply:
+
+```text
+Input → Model → Output
+```
+
+A decision-making AI system can instead look like:
+
+```text
+Observe
+   ↓
+Represent current state
+   ↓
+Reason about possibilities
+   ↓
+Handle uncertainty
+   ↓
+Update beliefs
+   ↓
+Evaluate possible actions
+   ↓
+Choose action
+   ↓
+Act
+   ↓
+Observe again
 ```
 
 ---
 
-# Key Takeaways
+## 22. Where Does Machine Learning Fit?
 
-By completing these foundations, you should understand:
+This was one of the biggest points of confusion.
 
-- What AI is
-- AI vs Machine Learning
-- What an agent is
-- Intelligence and rational behavior
-- States and state spaces
+ML is **one way of providing intelligence inside an AI system**.
+
+For example:
+
+```text
+              AI AGENT
+                  │
+       ┌──────────┼──────────┐
+       ↓          ↓          ↓
+   Perception   Reasoning  Decision
+       │                     │
+      ML                 Utility/
+   Model                 Planning
+```
+
+ML can learn things that would be difficult to manually program.
+
+For example, a camera receives:
+
+```text
+Raw image
+```
+
+An ML model can identify:
+
+```text
+Car
+Pedestrian
+Road
+Traffic light
+```
+
+The AI agent can then use that information to decide:
+
+```text
+Brake
+Accelerate
+Turn
+Wait
+```
+
+So:
+
+**ML can provide predictions/information.**
+
+**AI uses information to reason, decide, and act.**
+
+---
+
+## 23. Classical AI vs Machine Learning
+
+### Classical AI
+
+Programmer explicitly defines:
+
+```text
+Rules
+Logic
+Search
+Planning
+Probability models
+Utility
+Decision procedures
+```
+
+Example:
+
+```python
+if obstacle_ahead:
+    stop()
+```
+
+### Machine Learning
+
+The programmer provides:
+
+```text
+Data
++
+Learning algorithm
++
+Objective
+```
+
+The model learns patterns.
+
+Example:
+
+```text
+Images
+   ↓
+Training
+   ↓
+Model
+
+New image
+   ↓
+Model
+   ↓
+"Pedestrian"
+```
+
+The learned model replaces some manually written rules.
+
+---
+
+# 24. The Most Important Mental Model
+
+Do not think:
+
+```text
+AI = Bayes
+AI = A*
+AI = Probability
+AI = ML
+```
+
+Instead think:
+
+```text
+AI = Building a system that can intelligently
+     perceive, reason, decide and act.
+```
+
+Different tools solve different parts:
+
+```text
+State
+  ↓
+What is happening?
+
+Probability
+  ↓
+What might be happening?
+
+Bayes
+  ↓
+How should my belief change after new evidence?
+
+Belief State
+  ↓
+What do I currently believe?
+
+Utility
+  ↓
+What outcomes do I prefer?
+
+Decision Theory
+  ↓
+How should I choose?
+
+MEU
+  ↓
+Which action has the best expected outcome?
+
+Action
+  ↓
+Do something in the environment.
+```
+
+---
+
+# 25. Current Understanding
+
+You have now learned the foundations of **classical and probabilistic decision-making AI**:
+
+- Intelligent agents
+- Rational behavior
+- State
+- State space
 - Search
 - Optimal solutions
 - Planning
 - Uncertainty
 - Probability
 - Bayes' Rule
-- Belief states
+- Belief State
 - Utility
-- Decision theory
+- Decision Theory
 - Maximum Expected Utility
-- Transition models
+- Transition Models
+- Wumpus World
+- Agent–Environment interaction
+- How ML can fit inside an AI system
 
-The central idea is:
+### The Key Distinction
 
 ```text
-Represent the world
-       ↓
-Handle uncertainty
-       ↓
-Update beliefs
-       ↓
-Evaluate possible outcomes
-       ↓
-Choose the best action
-       ↓
-Act
-       ↓
-Observe again
-       ↓
-Repeat
+ML:
+"Given this data, what do I predict?"
+
+AI Agent:
+"Given what I know, what should I do?"
+```
+
+And a modern AI system can combine both:
+
+```text
+Raw Environment
+      ↓
+      ML
+      ↓
+Useful information
+      ↓
+State / Belief
+      ↓
+Reasoning + Probability
+      ↓
+Utility / Decision
+      ↓
+Action
+      ↓
+Environment
 ```
 
 ---
 
-# Next Step
+# Next
 
-After understanding these AI foundations, the next major area is:
+## Machine Learning Foundations
+
+The next step is to understand how machines **learn patterns from data** and how those learned models can become components of intelligent AI systems.
 
 ```text
-Artificial Intelligence
-        ↓
-Machine Learning
-        ↓
-Supervised Learning
-        ↓
-Unsupervised Learning
-        ↓
-Deep Learning
-        ↓
-NLP
-        ↓
-Transformers
-        ↓
-LLMs
+Data
+  ↓
+Features / Representation
+  ↓
+Learning Algorithm
+  ↓
+Model
+  ↓
+Prediction
+  ↓
+Evaluation
+  ↓
+Improvement
 ```
-
-The goal is not only to use AI libraries, but to understand **why these systems work and what happens underneath them**.
