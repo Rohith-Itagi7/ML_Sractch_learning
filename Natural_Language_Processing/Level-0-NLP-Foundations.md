@@ -1,3 +1,65 @@
+# NLP From Scratch to Advanced
+
+```text
+NLP From Scratch to Advanced
+│
+├── Level 0 — NLP Foundations
+│   ├── What is NLP?
+│   ├── Text Normalization
+│   ├── Regex
+│   ├── Tokenization
+│   ├── Stopwords
+│   ├── Stemming
+│   ├── Lemmatization
+│   └── NLP Pipeline
+│
+├── Level 1 — Classical Representations
+│   ├── One-Hot Encoding
+│   ├── Bag of Words
+│   ├── N-Grams
+│   ├── TF-IDF
+│   ├── Limitations of Sparse Representations
+│   └── Word Embeddings
+│
+├── Level 2 — Sequence Models
+│   ├── Neural Language Models
+│   ├── RNN
+│   ├── BPTT
+│   ├── Vanishing/Exploding Gradients
+│   ├── LSTM
+│   ├── GRU
+│   └── Seq2Seq
+│
+├── Level 3 — Attention
+│   ├── Query / Key / Value
+│   ├── Attention Scores
+│   ├── Softmax
+│   ├── Scaled Dot-Product Attention
+│   └── Self-Attention
+│
+├── Level 4 — Transformers
+│   ├── Transformer Architecture
+│   ├── Positional Encoding
+│   ├── Multi-Head Attention
+│   ├── Encoder
+│   ├── Decoder
+│   ├── BERT
+│   ├── GPT
+│   └── Hugging Face
+│
+└── Level 5 — Modern NLP / LLMs
+    ├── BPE
+    ├── WordPiece
+    ├── SentencePiece
+    ├── Modern Tokenizers
+    ├── Pretraining
+    ├── Instruction Tuning
+    ├── RLHF
+    ├── RAG
+    ├── Vector Databases
+    ├── Agents
+    └── LLM Systems
+
 # NLP Foundations — Level 0
 
 Practical NLP learning notes from scratch, focused on understanding what happens under the hood before using libraries.
