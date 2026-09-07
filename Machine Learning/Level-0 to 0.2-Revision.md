@@ -1,4 +1,4 @@
-# 50. Level 0-2 — What You Should Understand
+# 50. Level 0-0.2 — What You Should Understand
 
 Before moving to individual ML algorithms, make sure you can explain the following concepts in your own words.
 
